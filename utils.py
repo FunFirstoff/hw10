@@ -2,11 +2,13 @@ import json
 
 
 def get_candidates(path):
+    """Получает данные о кандидатах из json файла"""
     with open(path, 'r', encoding='utf-8') as candidates:
         return json.load(candidates)
 
 
 def format_candidates(candidates_list):
+    """Форматирует информацию о кандидатах"""
     result = '<pre>'
     for candidate in candidates_list:
         result += (
@@ -19,12 +21,14 @@ def format_candidates(candidates_list):
 
 
 def get_candidate_by_id(candidates_list, candidate_id):
+    """Получает id кандидатов"""
     for candidate in candidates_list:
         if candidate["id"] == candidate_id:
             return candidate
 
 
 def get_candidates_by_skill(candidates_list, candidate_skill):
+    """Получает скиллы кандидатов"""
     result = []
 
     for candidate in candidates_list:
